@@ -1,13 +1,15 @@
 module.exports = Year;
 
 function Year(year){
-  this.isLeap = function(number){
-    if (year % 100 === 0 && year % 400 !== 0) {
-      return false;
-    } else if (year % 4 === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  this.year = year;
 }
+
+Year.prototype.isLeap = function() {
+  if (this.year % 4 !== 0) {
+    return false;
+  } else if (this.year % 100 === 0 && this.year % 400 !== 0) {
+    return false;
+  } else {
+    return true;
+  }
+};
