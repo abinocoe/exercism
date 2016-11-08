@@ -3,18 +3,18 @@ module.exports = DnaTranscriber;
 function DnaTranscriber() {}
 
 DnaTranscriber.prototype.toRna = function(dnaStrand) {
-  var rnaStrand = [];
+  var rnaStrand = "";
   for (var i = 0; i < dnaStrand.length; i++) {
     switch (dnaStrand[i]) {
-      case 'C': rnaStrand.push('G');
+      case 'C': rnaStrand += "G";
         break;
-      case 'G': rnaStrand.push('C');
+      case 'G': rnaStrand += "C";
         break;
-      case 'A': rnaStrand.push('U');
+      case 'A': rnaStrand += "U";
         break;
-      case 'T': rnaStrand.push('A');
+      case 'T': rnaStrand += "A";
         break;
     }
   }
-  return rnaStrand.join('');
+  return rnaStrand;
 };
