@@ -10,7 +10,7 @@ Isogram.prototype.isIsogram = function() {
                        .replace(/[\s\-]/g, '');
     let letter = string.slice(0, 1);
     string     = string.slice(1);
-    
+
     if (string.match(letter)) return false;
   }
   return true;

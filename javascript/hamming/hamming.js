@@ -1,7 +1,6 @@
 module.exports = Hamming;
 
-function Hamming() {
-}
+function Hamming() {}
 
 Hamming.prototype.compute = function(stringOne, stringTwo) {
   this.count = 0;
