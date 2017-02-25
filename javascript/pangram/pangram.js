@@ -4,16 +4,23 @@ const Pangram = function(testString) {
 
 Pangram.prototype.isPangram = function() {
 
-  const pangram = this.testString.toLowerCase();
+  const pang = this.testString.toLowerCase();
+  
+  if (!pang) {
+    return false;
+  }
 
-  for (let i = 0; i < 26; i++) {
-    let letter = String.fromCharCode(97 + i);
+  let alphabet = new Set();
 
-    if (!pangram.includes(letter)) {
-      return false;
+  for (var i = 0; i < pang.length; i++) {
+    let charCode = pang.charCodeAt(i);
+    if (charCode >= 97 && charCode <= 122) {
+      alphabet.add(charCode);
     }
   }
-  return true;
+
+  return alphabet.size === 26;
+
 };
 
 module.exports = Pangram;
